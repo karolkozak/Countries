@@ -1,0 +1,19 @@
+:host {
+  .list-header, .country-item {
+    border: 1px solid #b7b6b6;
+    border-radius: 2px;
+    margin: 2px;
+    cursor: pointer;
+  }
+  .country-item:hover {
+    background-color: #39a5d2;
+  }
+  .list-header {
+    font-weight: bolder;
+  }
+  .no-countries {
+    color: #ff0000;
+    text-align: center;
+    font-weight: bold;
+  }
+}

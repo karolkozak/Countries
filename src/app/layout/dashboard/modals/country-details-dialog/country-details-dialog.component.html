@@ -1,0 +1,11 @@
+<h1 mat-dialog-title>{{data.country.name}}</h1>
+<div mat-dialog-content>
+  <div *ngFor="let timezone of data.country.timezones">Actual time ({{timezone}}): {{time(timezone)}}</div>
+
+  <agm-map [latitude]="data.country.latlng[0]" [longitude]="data.country.latlng[1]">
+    <agm-marker [latitude]="data.country.latlng[0]" [longitude]="data.country.latlng[1]"></agm-marker>
+  </agm-map>
+</div>
+<div class="action-button" mat-dialog-actions>
+  <button mat-button [mat-dialog-close]="data.country">Close</button>
+</div>

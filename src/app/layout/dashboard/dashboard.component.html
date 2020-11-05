@@ -1,0 +1,23 @@
+<div class="search-form">
+  <form [formGroup]="countriesSearchForm" (ngSubmit)="search()">
+    <mat-form-field class="query-input">
+      <input matInput
+             placeholder="query"
+             type="text"
+             formControlName="query">
+    </mat-form-field>
+    <mat-form-field class="selector-input">
+      <mat-label>Selector</mat-label>
+      <mat-select formControlName="queryField">
+        <mat-option *ngFor="let queryField of queryFields" [value]="queryField">
+          {{queryField.name | titlecase}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <button mat-raised-button color="primary" class="search">Search</button>
+  </form>
+</div>
+
+<div class="search-results">
+  <app-countries-list [countriesList]="countriesList"></app-countries-list>
+</div>

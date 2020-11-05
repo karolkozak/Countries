@@ -1,0 +1,19 @@
+<ng-container *ngIf="countriesList.length > 0; else noCountries">
+  <div class="list-header row">
+    <div class="col-3">Name</div>
+    <div class="col-2">Native Name</div>
+    <div class="col-3">Currencies</div>
+    <div class="col-2">Capital</div>
+    <div class="col-2">Timezones</div>
+  </div>
+  <div class="country-item row" *ngFor="let country of countriesList" (click)="openDialog(country)">
+    <div class="col-3">{{country.name}}</div>
+    <div class="col-2">{{country.nativeName}}</div>
+    <div class="col-3">{{getCurrencies(country)}}</div>
+    <div class="col-2">{{country.capital}}</div>
+    <div class="col-2">{{country.timezones.join(', ')}}</div>
+  </div>
+</ng-container>
+<ng-template #noCountries>
+  <div class="no-countries">No countries found</div>
+</ng-template>

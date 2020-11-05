@@ -1,0 +1,11 @@
+:host {
+  .search-form {
+    text-align: center;
+    .query-input {
+      width: 300px;
+    }
+    .selector-input, button.search {
+      margin-left: 20px;
+    }
+  }
+}
